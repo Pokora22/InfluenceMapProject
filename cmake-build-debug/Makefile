@@ -142,6 +142,33 @@ InfluenceMapDemo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/build
 .PHONY : InfluenceMapDemo/fast
 
+Component.obj: Component.cpp.obj
+
+.PHONY : Component.obj
+
+# target to build an object file
+Component.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/Component.cpp.obj
+.PHONY : Component.cpp.obj
+
+Component.i: Component.cpp.i
+
+.PHONY : Component.i
+
+# target to preprocess a source file
+Component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/Component.cpp.i
+.PHONY : Component.cpp.i
+
+Component.s: Component.cpp.s
+
+.PHONY : Component.s
+
+# target to generate assembly for a file
+Component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/Component.cpp.s
+.PHONY : Component.cpp.s
+
 Enemy.obj: Enemy.cpp.obj
 
 .PHONY : Enemy.obj
@@ -385,6 +412,33 @@ TileMap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/TileMap.cpp.s
 .PHONY : TileMap.cpp.s
 
+TransformComponent.obj: TransformComponent.cpp.obj
+
+.PHONY : TransformComponent.obj
+
+# target to build an object file
+TransformComponent.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj
+.PHONY : TransformComponent.cpp.obj
+
+TransformComponent.i: TransformComponent.cpp.i
+
+.PHONY : TransformComponent.i
+
+# target to preprocess a source file
+TransformComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.i
+.PHONY : TransformComponent.cpp.i
+
+TransformComponent.s: TransformComponent.cpp.s
+
+.PHONY : TransformComponent.s
+
+# target to generate assembly for a file
+TransformComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.s
+.PHONY : TransformComponent.cpp.s
+
 Window.obj: Window.cpp.obj
 
 .PHONY : Window.obj
@@ -475,6 +529,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... InfluenceMapDemo
+	@echo ... Component.obj
+	@echo ... Component.i
+	@echo ... Component.s
 	@echo ... Enemy.obj
 	@echo ... Enemy.i
 	@echo ... Enemy.s
@@ -502,6 +559,9 @@ help:
 	@echo ... TileMap.obj
 	@echo ... TileMap.i
 	@echo ... TileMap.s
+	@echo ... TransformComponent.obj
+	@echo ... TransformComponent.i
+	@echo ... TransformComponent.s
 	@echo ... Window.obj
 	@echo ... Window.i
 	@echo ... Window.s

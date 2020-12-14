@@ -244,6 +244,34 @@ CMakeFiles/InfluenceMapDemo.dir/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InfluenceMapDemo.dir/Window.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\Dokumenty\WIT\C++\InfluenceMapDemo\Window.cpp -o CMakeFiles\InfluenceMapDemo.dir\Window.cpp.s
 
+CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj: CMakeFiles/InfluenceMapDemo.dir/flags.make
+CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj: CMakeFiles/InfluenceMapDemo.dir/includes_CXX.rsp
+CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj: ../TransformComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=G:\Dokumenty\WIT\C++\InfluenceMapDemo\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\InfluenceMapDemo.dir\TransformComponent.cpp.obj -c G:\Dokumenty\WIT\C++\InfluenceMapDemo\TransformComponent.cpp
+
+CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\Dokumenty\WIT\C++\InfluenceMapDemo\TransformComponent.cpp > CMakeFiles\InfluenceMapDemo.dir\TransformComponent.cpp.i
+
+CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\Dokumenty\WIT\C++\InfluenceMapDemo\TransformComponent.cpp -o CMakeFiles\InfluenceMapDemo.dir\TransformComponent.cpp.s
+
+CMakeFiles/InfluenceMapDemo.dir/Component.cpp.obj: CMakeFiles/InfluenceMapDemo.dir/flags.make
+CMakeFiles/InfluenceMapDemo.dir/Component.cpp.obj: CMakeFiles/InfluenceMapDemo.dir/includes_CXX.rsp
+CMakeFiles/InfluenceMapDemo.dir/Component.cpp.obj: ../Component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=G:\Dokumenty\WIT\C++\InfluenceMapDemo\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/InfluenceMapDemo.dir/Component.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\InfluenceMapDemo.dir\Component.cpp.obj -c G:\Dokumenty\WIT\C++\InfluenceMapDemo\Component.cpp
+
+CMakeFiles/InfluenceMapDemo.dir/Component.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InfluenceMapDemo.dir/Component.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\Dokumenty\WIT\C++\InfluenceMapDemo\Component.cpp > CMakeFiles\InfluenceMapDemo.dir\Component.cpp.i
+
+CMakeFiles/InfluenceMapDemo.dir/Component.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InfluenceMapDemo.dir/Component.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\Dokumenty\WIT\C++\InfluenceMapDemo\Component.cpp -o CMakeFiles\InfluenceMapDemo.dir\Component.cpp.s
+
 # Object files for target InfluenceMapDemo
 InfluenceMapDemo_OBJECTS = \
 "CMakeFiles/InfluenceMapDemo.dir/main.cpp.obj" \
@@ -257,7 +285,9 @@ InfluenceMapDemo_OBJECTS = \
 "CMakeFiles/InfluenceMapDemo.dir/Player.cpp.obj" \
 "CMakeFiles/InfluenceMapDemo.dir/TextureManager.cpp.obj" \
 "CMakeFiles/InfluenceMapDemo.dir/TileMap.cpp.obj" \
-"CMakeFiles/InfluenceMapDemo.dir/Window.cpp.obj"
+"CMakeFiles/InfluenceMapDemo.dir/Window.cpp.obj" \
+"CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj" \
+"CMakeFiles/InfluenceMapDemo.dir/Component.cpp.obj"
 
 # External object files for target InfluenceMapDemo
 InfluenceMapDemo_EXTERNAL_OBJECTS =
@@ -274,6 +304,8 @@ InfluenceMapDemo.exe: CMakeFiles/InfluenceMapDemo.dir/Player.cpp.obj
 InfluenceMapDemo.exe: CMakeFiles/InfluenceMapDemo.dir/TextureManager.cpp.obj
 InfluenceMapDemo.exe: CMakeFiles/InfluenceMapDemo.dir/TileMap.cpp.obj
 InfluenceMapDemo.exe: CMakeFiles/InfluenceMapDemo.dir/Window.cpp.obj
+InfluenceMapDemo.exe: CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj
+InfluenceMapDemo.exe: CMakeFiles/InfluenceMapDemo.dir/Component.cpp.obj
 InfluenceMapDemo.exe: CMakeFiles/InfluenceMapDemo.dir/build.make
 InfluenceMapDemo.exe: G:/Dokumenty/WIT/Cpp/SFML-2.5.1/lib/libsfml-graphics-s-d.a
 InfluenceMapDemo.exe: G:/Dokumenty/WIT/Cpp/SFML-2.5.1/lib/libsfml-window-s-d.a
@@ -282,7 +314,7 @@ InfluenceMapDemo.exe: G:/Dokumenty/WIT/Cpp/SFML-2.5.1/lib/libfreetype.a
 InfluenceMapDemo.exe: CMakeFiles/InfluenceMapDemo.dir/linklibs.rsp
 InfluenceMapDemo.exe: CMakeFiles/InfluenceMapDemo.dir/objects1.rsp
 InfluenceMapDemo.exe: CMakeFiles/InfluenceMapDemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=G:\Dokumenty\WIT\C++\InfluenceMapDemo\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable InfluenceMapDemo.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=G:\Dokumenty\WIT\C++\InfluenceMapDemo\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable InfluenceMapDemo.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\InfluenceMapDemo.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

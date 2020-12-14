@@ -3,7 +3,7 @@ project(InfluenceMapDemo)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(InfluenceMapDemo main.cpp Enemy.cpp Entity.cpp evilPlayer.cpp Game.cpp Input.cpp Level.cpp Object.cpp Player.cpp TextureManager.cpp TileMap.cpp Window.cpp)
+add_executable(InfluenceMapDemo main.cpp Enemy.cpp Entity.cpp evilPlayer.cpp Game.cpp Input.cpp Level.cpp Object.cpp Player.cpp TextureManager.cpp TileMap.cpp Window.cpp TransformComponent.cpp TransformComponent.h Component.cpp Component.h)
 
 ## If you want to link SFML statically
 set(SFML_STATIC_LIBRARIES TRUE)

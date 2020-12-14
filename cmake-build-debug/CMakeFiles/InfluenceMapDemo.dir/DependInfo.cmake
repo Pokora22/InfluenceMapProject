@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "G:/Dokumenty/WIT/C++/InfluenceMapDemo/Component.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/Component.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/Enemy.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/Enemy.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/Entity.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/Entity.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/Game.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/Game.cpp.obj"
@@ -13,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/Player.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/Player.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/TextureManager.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/TextureManager.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/TileMap.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/TileMap.cpp.obj"
+  "G:/Dokumenty/WIT/C++/InfluenceMapDemo/TransformComponent.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/Window.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/Window.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/evilPlayer.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/evilPlayer.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/main.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/main.cpp.obj"

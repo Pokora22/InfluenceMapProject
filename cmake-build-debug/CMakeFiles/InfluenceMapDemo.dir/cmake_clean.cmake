@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/InfluenceMapDemo.dir/Component.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/Enemy.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/Entity.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/Game.cpp.obj"
@@ -8,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/InfluenceMapDemo.dir/Player.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/TextureManager.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/TileMap.cpp.obj"
+  "CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/Window.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/evilPlayer.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/main.cpp.obj"
