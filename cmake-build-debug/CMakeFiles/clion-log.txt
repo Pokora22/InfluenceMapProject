@@ -1,0 +1,5 @@
+C:\Users\pokor\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" G:\Dokumenty\WIT\C++\InfluenceMapDemo
+-- Found SFML 2.5.1 in G:/Dokumenty/WIT/Cpp/SFML-2.5.1/lib/cmake/SFML
+-- Configuring done
+-- Generating done
+-- Build files have been written to: G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug
