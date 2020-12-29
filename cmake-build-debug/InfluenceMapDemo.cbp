@@ -132,6 +132,12 @@
 		<Unit filename="G:/Dokumenty/WIT/C++/InfluenceMapDemo/Player.h">
 			<Option target="InfluenceMapDemo"/>
 		</Unit>
+		<Unit filename="G:/Dokumenty/WIT/C++/InfluenceMapDemo/SpriteComponent.cpp">
+			<Option target="InfluenceMapDemo"/>
+		</Unit>
+		<Unit filename="G:/Dokumenty/WIT/C++/InfluenceMapDemo/SpriteComponent.h">
+			<Option target="InfluenceMapDemo"/>
+		</Unit>
 		<Unit filename="G:/Dokumenty/WIT/C++/InfluenceMapDemo/TextureManager.cpp">
 			<Option target="InfluenceMapDemo"/>
 		</Unit>

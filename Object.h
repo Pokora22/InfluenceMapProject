@@ -19,7 +19,7 @@ public:
     virtual void Update(float timeDelta) {};
     virtual void Draw(sf::RenderWindow &window, float timeDelta);
     void SetPosition(sf::Vector2f position);
-    sf::Vector2f GetPosition() const;
+    sf::Vector2f GetPosition();
     bool SetSprite(sf::Texture& texture, bool isSmooth, int frames = 1, int frameSpeed = 0);
     sf::Sprite& GetSprite();
     int GetFrameCount() const;

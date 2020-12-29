@@ -358,6 +358,33 @@ Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/Player.cpp.s
 .PHONY : Player.cpp.s
 
+SpriteComponent.obj: SpriteComponent.cpp.obj
+
+.PHONY : SpriteComponent.obj
+
+# target to build an object file
+SpriteComponent.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/SpriteComponent.cpp.obj
+.PHONY : SpriteComponent.cpp.obj
+
+SpriteComponent.i: SpriteComponent.cpp.i
+
+.PHONY : SpriteComponent.i
+
+# target to preprocess a source file
+SpriteComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/SpriteComponent.cpp.i
+.PHONY : SpriteComponent.cpp.i
+
+SpriteComponent.s: SpriteComponent.cpp.s
+
+.PHONY : SpriteComponent.s
+
+# target to generate assembly for a file
+SpriteComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InfluenceMapDemo.dir\build.make CMakeFiles/InfluenceMapDemo.dir/SpriteComponent.cpp.s
+.PHONY : SpriteComponent.cpp.s
+
 TextureManager.obj: TextureManager.cpp.obj
 
 .PHONY : TextureManager.obj
@@ -553,6 +580,9 @@ help:
 	@echo ... Player.obj
 	@echo ... Player.i
 	@echo ... Player.s
+	@echo ... SpriteComponent.obj
+	@echo ... SpriteComponent.i
+	@echo ... SpriteComponent.s
 	@echo ... TextureManager.obj
 	@echo ... TextureManager.i
 	@echo ... TextureManager.s

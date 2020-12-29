@@ -71,15 +71,22 @@ sf::Sprite& Object::GetSprite()
 // Sets the position of the object.
 void Object::SetPosition(sf::Vector2f position)
 {
-    m_position.x = position.x;
-    m_position.y = position.y;
+//    m_position.x = position.x;
+//    m_position.y = position.y;
+    //TODO: Use transform component
+    std::shared_ptr<TransformComponent> transformCmpt = GetComponent<TransformComponent>();
+    transformCmpt->SetPosition(sf::Vector2f(position.x, position.y));
+
+    //TODO: Use sprite component after it's in
     m_sprite.setPosition(position.x, position.y);
 }
 
 // Returns the position of the object.
-sf::Vector2f Object::GetPosition() const
+sf::Vector2f Object::GetPosition()
 {
-    return m_position;
+//    return m_position;
+    std::shared_ptr<TransformComponent> transformCmpt = GetComponent<TransformComponent>();
+    return transformCmpt->GetPosition();
 }
 
 // Gets the current animation state of the object.
