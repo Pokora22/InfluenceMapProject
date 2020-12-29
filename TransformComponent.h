@@ -7,8 +7,9 @@
 
 
 #include <SFML/Graphics.hpp>
+#include "Component.h"
 
-class TransformComponent {
+class TransformComponent : public Component{
 public:
     TransformComponent();
     void SetPosition(sf::Vector2f position);

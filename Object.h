@@ -3,6 +3,7 @@
 #define Object_h
 
 #include "Component.h"
+#include "TransformComponent.h"
 
 class Object
 {
