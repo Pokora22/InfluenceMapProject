@@ -3,11 +3,6 @@
 Game::Game() : m_window("Tiling", sf::Vector2u(1280, 800))
 
 {
-    //Test component
-    m_player.AttachComponent<Component>();
-    m_player.AttachComponent<Component>();
-    std::shared_ptr<Component> component = m_player.GetComponent<Component>();
-
     //set up influencemap parameters
     m_player.setInfluence(10);
     m_ePlayer.setInfluence(-2);

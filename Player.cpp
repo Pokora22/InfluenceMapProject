@@ -25,8 +25,8 @@ m_statPoints(0)
 	m_currentTextureIndex = static_cast<int>(ANIMATION_STATE::WALK_UP);
 	m_sprite.setOrigin(sf::Vector2f(13.f, 18.f));
 
-    // Add a transform component.
-    AttachComponent<TransformComponent>();
+//    std::shared_ptr<TransformComponent> transformCmpt = GetComponent<TransformComponent>();
+//    std::cout << "(Player.cpp)(Constructor)Transform: " << transformCmpt << std::endl;
 }
 
 // Updates the player object.

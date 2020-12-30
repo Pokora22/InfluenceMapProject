@@ -5,9 +5,10 @@
 //  Created by Denis Flynn on 03/10/2018.
 //  Copyright © 2018 Denis Flynn. All rights reserved.
 //
+#include <iostream>
 #include "utils.h"
 #include "Object.h"
-
+#include "SpriteComponent.h"
 
 
 // Default constructor.
@@ -22,6 +23,9 @@ m_frameHeight(0),
 m_timeDelta(0),
 m_influenceValue(1)
 {
+    // Add a transform component.
+    AttachComponent<TransformComponent>();
+//    AttachComponent<SpriteComponent>();
 }
 
 // Gives the object the given sprite.
@@ -71,20 +75,19 @@ sf::Sprite& Object::GetSprite()
 // Sets the position of the object.
 void Object::SetPosition(sf::Vector2f position)
 {
-//    m_position.x = position.x;
-//    m_position.y = position.y;
-    //TODO: Use transform component
     std::shared_ptr<TransformComponent> transformCmpt = GetComponent<TransformComponent>();
+//    std::cout << "(Object.cpp)(SetPosition)Transform:" << transformCmpt << std::endl;
     transformCmpt->SetPosition(sf::Vector2f(position.x, position.y));
 
     //TODO: Use sprite component after it's in
-    m_sprite.setPosition(position.x, position.y);
+    m_sprite.setPosition(transformCmpt->GetPosition().x, transformCmpt->GetPosition().y);
+//    std::shared_ptr<SpriteComponent> sprtCmpt = GetComponent<SpriteComponent>();
+//    sprtCmpt->setPosition(position);
 }
 
 // Returns the position of the object.
 sf::Vector2f Object::GetPosition()
 {
-//    return m_position;
     std::shared_ptr<TransformComponent> transformCmpt = GetComponent<TransformComponent>();
     return transformCmpt->GetPosition();
 }

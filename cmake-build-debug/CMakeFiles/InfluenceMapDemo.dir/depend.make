@@ -523,6 +523,7 @@ CMakeFiles/InfluenceMapDemo.dir/Object.cpp.obj: ../Component.h
 CMakeFiles/InfluenceMapDemo.dir/Object.cpp.obj: ../Object.cpp
 CMakeFiles/InfluenceMapDemo.dir/Object.cpp.obj: ../Object.h
 CMakeFiles/InfluenceMapDemo.dir/Object.cpp.obj: ../ResourcePath.hpp
+CMakeFiles/InfluenceMapDemo.dir/Object.cpp.obj: ../SpriteComponent.h
 CMakeFiles/InfluenceMapDemo.dir/Object.cpp.obj: ../TextureManager.h
 CMakeFiles/InfluenceMapDemo.dir/Object.cpp.obj: ../TransformComponent.h
 CMakeFiles/InfluenceMapDemo.dir/Object.cpp.obj: ../enums.h
