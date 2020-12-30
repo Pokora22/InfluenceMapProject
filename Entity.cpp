@@ -73,7 +73,10 @@ void Entity::Update(float timeDelta)
     if (m_currentTextureIndex != static_cast<int>(animState))
     {
         m_currentTextureIndex = static_cast<int>(animState);
-        m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+        std::shared_ptr<SpriteComponent> spriteCmpt = GetComponent<SpriteComponent>();
+//        m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+        spriteCmpt->setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+        std::cout << m_currentTextureIndex << std::endl;
     }
 }
 

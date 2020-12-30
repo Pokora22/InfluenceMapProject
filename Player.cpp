@@ -40,6 +40,7 @@ void Player::Update(float timeDelta)
 	// Calculate movement speed based on the timeDelta since the last update.
 	sf::Vector2f movementSpeed(0.f, 0.f);
 	sf::Vector2f previousPosition = m_position;
+	m_velocity = sf::Vector2f(0,0);
 
 	// Calculate where the current movement will put us.
 	ANIMATION_STATE animState = static_cast<ANIMATION_STATE>(m_currentTextureIndex);
@@ -47,7 +48,8 @@ void Player::Update(float timeDelta)
 	if (Input::IsKeyPressed(Input::KEY::KEY_LEFT))
 	{
 		// Set movement speed.
-		movementSpeed.x = -m_speed * timeDelta;
+		m_velocity.x = -m_speed * timeDelta;
+//		movementSpeed.x = -m_speed * timeDelta;
 
 		// Chose animation state.
 		animState = ANIMATION_STATE::WALK_LEFT;
@@ -55,16 +57,20 @@ void Player::Update(float timeDelta)
 	else if (Input::IsKeyPressed(Input::KEY::KEY_RIGHT))
 	{
 		// Set movement speed.
-		movementSpeed.x = m_speed * timeDelta;
+//		movementSpeed.x = m_speed * timeDelta;
+        m_velocity.x = m_speed * timeDelta;
 
-		// Chose animation state.
+
+        // Chose animation state.
 		animState = ANIMATION_STATE::WALK_RIGHT;
 	}
 
 	if (Input::IsKeyPressed(Input::KEY::KEY_UP))
 	{
 		// Set movement speed.
-		movementSpeed.y = -m_speed * timeDelta;
+//		movementSpeed.y = -m_speed * timeDelta;
+        m_velocity.y = -m_speed * timeDelta;
+
 
 		// Chose animation state.
 		animState = ANIMATION_STATE::WALK_UP;
@@ -72,9 +78,10 @@ void Player::Update(float timeDelta)
 	else if (Input::IsKeyPressed(Input::KEY::KEY_DOWN))
 	{
 		// Set movement speed.
-		movementSpeed.y = m_speed * timeDelta;
+//		movementSpeed.y = m_speed * timeDelta;
+        m_velocity.y = m_speed * timeDelta;
 
-		// Chose animation state.
+        // Chose animation state.
 		animState = ANIMATION_STATE::WALK_DOWN;
 	}
 
@@ -82,7 +89,7 @@ void Player::Update(float timeDelta)
 	
 	
 	{
-		m_position.x += movementSpeed.x;
+//		m_position.x += movementSpeed.x;
        // std::cout <<"player ="<<movementSpeed.x<<std::endl;
 	}
 
@@ -90,55 +97,60 @@ void Player::Update(float timeDelta)
 	
 	
 	{
-		m_position.y += movementSpeed.y;
+//		m_position.y += movementSpeed.y;
 	}
+
+	m_position += m_velocity;
+
+	Entity::Update(timeDelta);
 
 	// update the sprite position
 	SetPosition(m_position);
 
-	// Set the sprite.
-    std::shared_ptr<SpriteComponent> spriteCmpt = GetComponent<SpriteComponent>();
-	if (m_currentTextureIndex != static_cast<int>(animState))
-	{
-		m_currentTextureIndex = static_cast<int>(animState);
-//		m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
-        spriteCmpt->setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
 
-        //m_sprite.setColor(sf::Color::Red); //"evil" version
-	}
-
-	// set animation speed
-	if ((movementSpeed.x == 0) && (movementSpeed.y == 0))
-	{
-		// the character is still
-		if (IsAnimated())
-		{
-			// Update sprite to idle version.
-			// In our enum we have 4 walking sprites followed by 4 idle sprites.
-			// Given this, we can simply add 4 to a walking sprite to get its idle counterpart.
-			m_currentTextureIndex += 4;
-//			m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
-            spriteCmpt->setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
-
-			// Stop movement animations.
-			SetAnimated(false);
-		}
-	}
-	else
-	{
-		// the character is moving
-		if (!IsAnimated())
-		{
-			// Update sprite to walking version.
-			m_currentTextureIndex -= 4;
-//			m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
-            spriteCmpt->setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
-
-            // Start movement animations.
-			SetAnimated(true);
-		}
-	}
-
+//	// Set the sprite.
+//    std::shared_ptr<SpriteComponent> spriteCmpt = GetComponent<SpriteComponent>();
+//	if (m_currentTextureIndex != static_cast<int>(animState))
+//	{
+//		m_currentTextureIndex = static_cast<int>(animState);
+////		m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+//        spriteCmpt->setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+//
+//        //m_sprite.setColor(sf::Color::Red); //"evil" version
+//	}
+//
+//	// set animation speed
+//	if ((movementSpeed.x == 0) && (movementSpeed.y == 0))
+//	{
+//		// the character is still
+//		if (IsAnimated())
+//		{
+//			// Update sprite to idle version.
+//			// In our enum we have 4 walking sprites followed by 4 idle sprites.
+//			// Given this, we can simply add 4 to a walking sprite to get its idle counterpart.
+//			m_currentTextureIndex += 4;
+////			m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+//            spriteCmpt->setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+//
+//			// Stop movement animations.
+//			SetAnimated(false);
+//		}
+//	}
+//	else
+//	{
+//		// the character is moving
+//		if (!IsAnimated())
+//		{
+//			// Update sprite to walking version.
+//			m_currentTextureIndex -= 4;
+////			m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+//            spriteCmpt->setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+//
+//            // Start movement animations.
+//			SetAnimated(true);
+//		}
+//	}
+//
 	
 }
 

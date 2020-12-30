@@ -68,7 +68,7 @@ void evilPlayer::Update(float timeDelta)
     
     // update the sprite position
     SetPosition(m_position);
-    
+
     // Set the sprite.
     if (m_currentTextureIndex != static_cast<int>(animState))
     {
@@ -76,7 +76,7 @@ void evilPlayer::Update(float timeDelta)
         m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
         //m_sprite.setColor(sf::Color::Red); //"evil" version
     }
-    
+
     // set animation speed
     if ((movementSpeed.x == 0) && (movementSpeed.y == 0))
     {
@@ -88,7 +88,7 @@ void evilPlayer::Update(float timeDelta)
             // Given this, we can simply add 4 to a walking sprite to get its idle counterpart.
             m_currentTextureIndex += 4;
             m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
-            
+
             // Stop movement animations.
             SetAnimated(false);
         }
@@ -101,7 +101,7 @@ void evilPlayer::Update(float timeDelta)
             // Update sprite to walking version.
             m_currentTextureIndex -= 4;
             m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
-            
+
             // Start movement animations.
             SetAnimated(true);
         }
