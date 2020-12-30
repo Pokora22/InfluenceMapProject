@@ -67,7 +67,7 @@ void evilPlayer::Update(float timeDelta)
     }
     
     // update the sprite position
-    m_sprite.setPosition(m_position);
+    SetPosition(m_position);
     
     // Set the sprite.
     if (m_currentTextureIndex != static_cast<int>(animState))

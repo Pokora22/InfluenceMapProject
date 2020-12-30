@@ -23,7 +23,11 @@ m_statPoints(0)
 	// Set initial sprite.
 	SetSprite(TextureManager::GetTexture(m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_UP)]), false, 8, 12);
 	m_currentTextureIndex = static_cast<int>(ANIMATION_STATE::WALK_UP);
-	m_sprite.setOrigin(sf::Vector2f(13.f, 18.f));
+
+    std::shared_ptr<SpriteComponent> spriteCmpt = GetComponent<SpriteComponent>();
+    spriteCmpt->setOrigin(sf::Vector2f(13.f, 18.f));
+
+//	m_sprite.setOrigin(sf::Vector2f(13.f, 18.f));
 
 //    std::shared_ptr<TransformComponent> transformCmpt = GetComponent<TransformComponent>();
 //    std::cout << "(Player.cpp)(Constructor)Transform: " << transformCmpt << std::endl;
@@ -90,13 +94,16 @@ void Player::Update(float timeDelta)
 	}
 
 	// update the sprite position
-	m_sprite.setPosition(m_position);
+	SetPosition(m_position);
 
 	// Set the sprite.
+    std::shared_ptr<SpriteComponent> spriteCmpt = GetComponent<SpriteComponent>();
 	if (m_currentTextureIndex != static_cast<int>(animState))
 	{
 		m_currentTextureIndex = static_cast<int>(animState);
-		m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+//		m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+        spriteCmpt->setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+
         //m_sprite.setColor(sf::Color::Red); //"evil" version
 	}
 
@@ -110,7 +117,8 @@ void Player::Update(float timeDelta)
 			// In our enum we have 4 walking sprites followed by 4 idle sprites.
 			// Given this, we can simply add 4 to a walking sprite to get its idle counterpart.
 			m_currentTextureIndex += 4;
-			m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+//			m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+            spriteCmpt->setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
 
 			// Stop movement animations.
 			SetAnimated(false);
@@ -123,9 +131,10 @@ void Player::Update(float timeDelta)
 		{
 			// Update sprite to walking version.
 			m_currentTextureIndex -= 4;
-			m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+//			m_sprite.setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
+            spriteCmpt->setTexture(TextureManager::GetTexture(m_textureIDs[m_currentTextureIndex]));
 
-			// Start movement animations.
+            // Start movement animations.
 			SetAnimated(true);
 		}
 	}

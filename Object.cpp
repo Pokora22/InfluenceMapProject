@@ -47,7 +47,7 @@ void Object::SetPosition(sf::Vector2f position)
 {
     std::shared_ptr<TransformComponent> transformCmpt = GetComponent<TransformComponent>();
 //    std::cout << "(Object.cpp)(SetPosition)Transform:" << transformCmpt << std::endl;
-    transformCmpt->SetPosition(sf::Vector2f(position.x, position.y));
+    transformCmpt->SetPosition(position);
 
     //TODO: Use sprite component after it's in
 //    m_sprite.setPosition(transformCmpt->GetPosition().x, transformCmpt->GetPosition().y);
