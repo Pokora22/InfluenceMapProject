@@ -26,11 +26,6 @@ m_statPoints(0)
 
     std::shared_ptr<SpriteComponent> spriteCmpt = GetComponent<SpriteComponent>();
     spriteCmpt->setOrigin(sf::Vector2f(13.f, 18.f));
-
-//	m_sprite.setOrigin(sf::Vector2f(13.f, 18.f));
-
-//    std::shared_ptr<TransformComponent> transformCmpt = GetComponent<TransformComponent>();
-//    std::cout << "(Player.cpp)(Constructor)Transform: " << transformCmpt << std::endl;
 }
 
 // Updates the player object.
@@ -41,28 +36,22 @@ void Player::Update(float timeDelta)
 	sf::Vector2f previousPosition = m_position;
 	m_velocity = sf::Vector2f(0,0);
 
+	int vertical = 0;
+	int horizontal = 0;
+
 	// Calculate where the current movement will put us.
 	if (Input::IsKeyPressed(Input::KEY::KEY_LEFT))
-	{
-		// Set movement speed.
-		m_velocity.x = -m_speed * timeDelta;
-	}
+	    horizontal = -1;
 	else if (Input::IsKeyPressed(Input::KEY::KEY_RIGHT))
-	{
-		// Set movement speed.
-        m_velocity.x = m_speed * timeDelta;
-	}
+	    horizontal = 1;
 
 	if (Input::IsKeyPressed(Input::KEY::KEY_UP))
-	{
-		// Set movement speed
-        m_velocity.y = -m_speed * timeDelta;
-	}
+	    vertical = -1;
 	else if (Input::IsKeyPressed(Input::KEY::KEY_DOWN))
-	{
-		// Set movement speed.
-        m_velocity.y = m_speed * timeDelta;
-	}
+        vertical = 1;
+
+    m_velocity.x = horizontal * m_speed * timeDelta;
+    m_velocity.y = vertical * m_speed * timeDelta;
 
 	m_position += m_velocity;
 
@@ -77,8 +66,6 @@ PLAYER_CLASS Player::GetClass() const
 {
     return m_class;
 }
-
-
 
 // Set the player's health.
 void Player::SetHealth(int healthValue)
