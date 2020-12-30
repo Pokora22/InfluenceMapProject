@@ -7,7 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/InfluenceMapDemo.dir/Level.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/Object.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/Player.cpp.obj"
-  "CMakeFiles/InfluenceMapDemo.dir/SpriteComponent.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/TextureManager.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/TileMap.cpp.obj"
   "CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj"

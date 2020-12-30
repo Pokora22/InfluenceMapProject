@@ -4,7 +4,9 @@
 
 #include "Component.h"
 #include "TransformComponent.h"
+#include "SpriteComponent.hpp"
 #include <iostream>
+#include "utils.h"
 
 class Object
 {

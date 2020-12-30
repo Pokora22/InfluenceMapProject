@@ -5,10 +5,8 @@
 //  Created by Denis Flynn on 03/10/2018.
 //  Copyright © 2018 Denis Flynn. All rights reserved.
 //
-#include <iostream>
-#include "utils.h"
+
 #include "Object.h"
-#include "SpriteComponent.h"
 
 
 // Default constructor.
@@ -25,7 +23,7 @@ m_influenceValue(1)
 {
     // Add a transform component.
     AttachComponent<TransformComponent>();
-//    AttachComponent<SpriteComponent>();
+    AttachComponent<SpriteComponent>();
 }
 
 // Gives the object the given sprite.
@@ -69,6 +67,9 @@ bool Object::SetSprite(sf::Texture& texture, bool isSmooth, int frames, int fram
 // Returns the object's sprite.
 sf::Sprite& Object::GetSprite()
 {
+    //TODO: Change to get sprite component sprite
+//    std::shared_ptr<SpriteComponent> sprite = GetComponent<SpriteComponent>();
+//    return sprite->GetSprite();
     return m_sprite;
 }
 

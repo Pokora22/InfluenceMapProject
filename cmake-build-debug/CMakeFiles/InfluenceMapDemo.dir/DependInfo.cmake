@@ -12,7 +12,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/Level.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/Level.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/Object.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/Object.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/Player.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/Player.cpp.obj"
-  "G:/Dokumenty/WIT/C++/InfluenceMapDemo/SpriteComponent.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/SpriteComponent.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/TextureManager.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/TextureManager.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/TileMap.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/TileMap.cpp.obj"
   "G:/Dokumenty/WIT/C++/InfluenceMapDemo/TransformComponent.cpp" "G:/Dokumenty/WIT/C++/InfluenceMapDemo/cmake-build-debug/CMakeFiles/InfluenceMapDemo.dir/TransformComponent.cpp.obj"
