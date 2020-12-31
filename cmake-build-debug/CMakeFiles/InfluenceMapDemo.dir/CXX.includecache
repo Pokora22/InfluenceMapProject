@@ -14,12 +14,6 @@ G:/Dokumenty/WIT/C++/InfluenceMapDemo/Entity.h
 Level.hpp
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/Level.hpp
 
-G:/Dokumenty/WIT/C++/InfluenceMapDemo/Entity.cpp
-utils.h
-G:/Dokumenty/WIT/C++/InfluenceMapDemo/utils.h
-Entity.h
-G:/Dokumenty/WIT/C++/InfluenceMapDemo/Entity.h
-
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/Entity.h
 utils.h
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/utils.h
@@ -149,6 +143,10 @@ string
 -
 sstream
 -
+
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/main.cpp
+Game.h
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Game.h
 
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/utils.h
 SFML/Graphics.hpp

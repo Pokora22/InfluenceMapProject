@@ -72,7 +72,7 @@ void Game::Update(){
             {
                 int  intSpreadOutAmount=5;
                 m_imap->propagateInfluence(playerPosition.x,playerPosition.y, intSpreadOutAmount, GameIMap::PropCurve::Linear);
-                m_imap->propagateInfluence(ePlayerPosition.x,ePlayerPosition.y, intSpreadOutAmount, GameIMap::PropCurve::Linear);
+//                m_imap->propagateInfluence(ePlayerPosition.x,ePlayerPosition.y, intSpreadOutAmount, GameIMap::PropCurve::Linear);
             }
             
         }
@@ -90,7 +90,7 @@ void Game::Update(){
             {
                 
                 int intSpreadOutAmount=5;
-                m_imap->propagateInfluence(playerPosition.x,playerPosition.y, intSpreadOutAmount, GameIMap::PropCurve::Linear);
+//                m_imap->propagateInfluence(playerPosition.x,playerPosition.y, intSpreadOutAmount, GameIMap::PropCurve::Linear);
                 m_imap->propagateInfluence(ePlayerPosition.x,ePlayerPosition.y, intSpreadOutAmount, GameIMap::PropCurve::Linear);
             }
             

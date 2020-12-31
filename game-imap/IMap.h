@@ -74,9 +74,11 @@ namespace GameIMap
             }
 		}
 
-		void propagateInfluence(int _centerX, int _centerY, int _radius, PropCurve _propType, float _magnitude = 1.0f)
+		void propagateInfluence(int _centerX, int _centerY, int _radius, PropCurve _propType, float _magnitude = .1f)
 		{
 			if (_centerX < 0 || _centerX >= m_iWidth || _centerY < 0 || _centerY >= m_iHeight) return;
+
+			std::cout << "Propagating value: " << m_Grid[_centerX][_centerY] << std::endl;
 
 			int startX = _centerX - _radius;
 			int startY = _centerY - _radius;
@@ -96,6 +98,11 @@ namespace GameIMap
 					//cout << "x = " << x << ", y = " << y << ", ";
 					//cout << "distance = " << distance << endl;
 					m_Grid[x][y] += propValue(m_Grid[_centerX][_centerY], distance, _propType) * _magnitude;
+
+					if (m_Grid[_centerX][_centerY] == 8){
+					    std::cout << "Prop value: " << propValue(m_Grid[_centerX][_centerY], distance, _propType) * _magnitude << std::endl;
+					    std::cout << m_Grid[x][y] << std:: endl;
+					}
                     //Truncate final to (0, 10)
                     truncateInfluence(x, y);
 				}
