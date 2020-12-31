@@ -74,7 +74,7 @@ namespace GameIMap
             }
 		}
 
-		void propagateInfluence(int _centerX, int _centerY, int _radius, PropCurve _propType, float _magnitude = .1f)
+		void propagateInfluence(int _centerX, int _centerY, int _radius, PropCurve _propType, float _magnitude = 1.f)
 		{
 			if (_centerX < 0 || _centerX >= m_iWidth || _centerY < 0 || _centerY >= m_iHeight) return;
 
@@ -90,13 +90,14 @@ namespace GameIMap
 			int minY = max(0, startY);
 			int maxY = min(endY, m_iHeight);
 
+			cout << "---------------------------------------" << endl;
 			for (int y = minY; y < maxY; y++)
 			{
 				for (int x = minX; x < maxX; x++)
 				{
 					float distance = getNormalizedDistance(y, _centerY, x, _centerX, _radius);
-					//cout << "x = " << x << ", y = " << y << ", ";
-					//cout << "distance = " << distance << endl;
+					cout << "x = " << x << ", y = " << y << ", ";
+					cout << "distance = " << distance << endl;
 					m_Grid[x][y] += propValue(m_Grid[_centerX][_centerY], distance, _propType) * _magnitude;
 
 					if (m_Grid[_centerX][_centerY] == 8){
@@ -121,7 +122,7 @@ namespace GameIMap
 			{
 			case PropCurve::Linear:
 //				return 1.0f - _distance;
-                return _value - _distance;
+                return _value * (1 - _distance);
 				break;
 			default:
 				return 0.0f;
