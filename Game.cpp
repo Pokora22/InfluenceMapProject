@@ -50,25 +50,23 @@ void Game::Update(){
     static sf::Vector2i old_E_PlayerPosition(0,0);
     ++updateCounterIMap;
     m_window.Update();
-    float currentTime = m_clock.restart().asSeconds();
-    float timeDelta = 0.f;
-    sf::Event event;
-    float newTime = m_clock.getElapsedTime().asSeconds();
-    float frameTime = std::max(0.f, newTime - currentTime);
+
+    //Delta seems fucked beyond recognition, not sure what's happening to the frames
+    float timeDelta = m_clock.restart().asSeconds();
     
-    
-    m_player.Update(0.01);//use timeDelta, which needs to be calculated per frame
-    m_ePlayer.Update(0.01);
+    m_player.Update(.01f);//use timeDelta, which needs to be calculated per frame
+    m_ePlayer.Update(.01f);
     // Store the player position as it's used many times.
     if (updateCounterIMap%10==0){
         sf::Vector2i playerPosition = m_map.GetActualTileLocation(m_player.GetPosition());
         sf::Vector2i  ePlayerPosition = m_map.GetActualTileLocation(m_ePlayer.GetPosition());
         
         if(oldPlayerPosition!=playerPosition){
-            m_imap->clear();//everytime player moves to new tile, reset influencemap calculation
-            m_imap->setCellValue(playerPosition.x,playerPosition.y, 30);//m_player.getInfluence());
-            
-            m_imap->propValue(0.1, GameIMap::PropCurve::Linear);
+//            m_imap->clear();//everytime player moves to new tile, reset influencemap calculation
+            m_imap->addCellValue(playerPosition.x,playerPosition.y, m_player.getInfluence());
+
+            //THIS DOESN'T DO ANYTHING !
+//            m_imap->propValue(0.1, GameIMap::PropCurve::Linear);
             //both player and enemys need to be updated as imap has been cleared at start
             for (auto i = 0; i < 2; i++)
             {
@@ -81,9 +79,11 @@ void Game::Update(){
         
         //if enemy position changes, update influence map
         if(old_E_PlayerPosition!=ePlayerPosition){
-            m_imap->clear();//if not done here,
-            m_imap->setCellValue(ePlayerPosition.x,ePlayerPosition.y,m_ePlayer.getInfluence());
-            m_imap->propValue(0.1, GameIMap::PropCurve::Linear);
+//            m_imap->clear();//if not done here,
+            m_imap->addCellValue(ePlayerPosition.x,ePlayerPosition.y,m_ePlayer.getInfluence());
+            //THIS DOESN'T DO ANYTHING !
+//            m_imap->propValue(0.1, GameIMap::PropCurve::Linear);
+//            std::cout << "Evil Player map changed to: " << m_imap->getCellValue(ePlayerPosition.x,ePlayerPosition.y) << std::endl;
             
             //both player and enemys need to be updated as imap has been cleared at start
             for (auto i = 0; i < 2; i++)
@@ -109,9 +109,6 @@ void Game::Update(){
     
     // if (updateCounterIMap%100==0)
     
-    
-    currentTime = newTime;
-    
     //    float timestep = 1.0f / m_snake.GetSpeed();
     //    if(m_elapsed >= timestep){
     //
@@ -120,6 +117,7 @@ void Game::Update(){
     //
     //    }
 }
+
 sf::Text Game::utilityFn(float val, sf::Vector2i pos)
 {
     std::stringstream stream;
@@ -155,10 +153,11 @@ void Game::Render(){
     for (auto j=0;j<m_imap->m_iHeight;j++ )
         for (auto i =0; i< m_imap->m_iWidth;i++){
             location=m_map.GetActualTileLocation(j,i);
-            
-            color.r=m_imap->getCellValue(j, i)*150/3+100;
-            color.g=m_imap->getCellValue(j, i)*100;
-            color.b=m_imap->getCellValue(j, i)*200/3+125;
+            float cellValue = m_imap->getCellValue(j, i);
+
+            color.r=m_imap->getCellValue(j, i)*255/10;
+            color.g=m_imap->getCellValue(j, i)*255/10;
+            color.b=m_imap->getCellValue(j, i)*255/10;
             m_map.rectangeOnTile(sf::Vector2i(i,j),color );
             // }
             sfTextArr.push_back(utilityFn(m_imap->getCellValue(j, i),sf::Vector2i(j,i)) );

@@ -45,6 +45,10 @@ namespace GameIMap
 		{
 			if (_x >= 0 && _x < m_iWidth && _y >= 0 && _y < m_iHeight)
 			{
+                //Truncate to (0, 10)
+                _value = _value > 10 ? 10 : _value < 0? 0 : _value;
+                std::cout << "Cell value set to: " << _value << std::endl;
+
 				m_Grid[_x][_y] = _value;
 			}
 		}
@@ -56,12 +60,20 @@ namespace GameIMap
 		{
 			if (_x >= 0 && _x < m_iWidth && _y >= 0 && _y < m_iHeight)
 			{
-				//cout << "x = " << _x << ", ";
-				//cout << "y = " << _y << ", ";
-				//cout << "value = " << _value << endl;
-				m_Grid[_x][_y] += _value;
+                m_Grid[_x][_y] += _value;
+                //Truncate final to (0, 10)
+                truncateInfluence(_x, _y);
 			}
 		}
+
+		void truncateInfluence(int _x, int _y,  int _min = 0, int _max = 10){
+            if (_x >= 0 && _x < m_iWidth && _y >= 0 && _y < m_iHeight) {
+                float _value = m_Grid[_x][_y];
+                _value = _value > 10 ? 10 : _value < 0 ? 0 : _value;
+                m_Grid[_x][_y] = _value;
+            }
+		}
+
 		void propagateInfluence(int _centerX, int _centerY, int _radius, PropCurve _propType, float _magnitude = 1.0f)
 		{
 			if (_centerX < 0 || _centerX >= m_iWidth || _centerY < 0 || _centerY >= m_iHeight) return;
@@ -83,7 +95,9 @@ namespace GameIMap
 					float distance = getNormalizedDistance(y, _centerY, x, _centerX, _radius);
 					//cout << "x = " << x << ", y = " << y << ", ";
 					//cout << "distance = " << distance << endl;
-					m_Grid[x][y] += propValue(distance, _propType) * _magnitude;
+					m_Grid[x][y] += propValue(m_Grid[_centerX][_centerY], distance, _propType) * _magnitude;
+                    //Truncate final to (0, 10)
+                    truncateInfluence(x, y);
 				}
 			}
 		}
@@ -92,14 +106,15 @@ namespace GameIMap
 			float result = sqrt((_y - _centerY) * (_y - _centerY) + (_x - _centerX) * (_x - _centerX)) / _radius;
 			return (result > 1) ? 1 : result;
 		}
-		float propValue(float _distance, PropCurve _propCurve)
+		float propValue(float _value, float _distance, PropCurve _propCurve)
 		{
 			assert(_distance >= 0.0f && _distance <= 1.0f);
 
 			switch (_propCurve)
 			{
 			case PropCurve::Linear:
-				return 1.0f - _distance;
+//				return 1.0f - _distance;
+                return _value - _distance;
 				break;
 			default:
 				return 0.0f;
