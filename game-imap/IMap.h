@@ -46,10 +46,8 @@ namespace GameIMap
 			if (_x >= 0 && _x < m_iWidth && _y >= 0 && _y < m_iHeight)
 			{
                 //Truncate to (0, 10)
-                _value = _value > 10 ? 10 : _value < 0? 0 : _value;
-                std::cout << "Cell value set to: " << _value << std::endl;
-
 				m_Grid[_x][_y] = _value;
+				truncateInfluence(_x, _y);
 			}
 		}
 		float getCellValue(int _x, int _y)
@@ -66,10 +64,10 @@ namespace GameIMap
 			}
 		}
 
-		void truncateInfluence(int _x, int _y,  int _min = 0, int _max = 10){
+		void truncateInfluence(int _x, int _y,  int _min = -10, int _max = 10){
             if (_x >= 0 && _x < m_iWidth && _y >= 0 && _y < m_iHeight) {
                 float _value = m_Grid[_x][_y];
-                _value = _value > 10 ? 10 : _value < 0 ? 0 : _value;
+                _value = _value > _max ? _max : _value < _min ? _min : _value;
                 m_Grid[_x][_y] = _value;
             }
 		}
@@ -77,8 +75,6 @@ namespace GameIMap
 		void propagateInfluence(int _centerX, int _centerY, int _radius, PropCurve _propType, float _magnitude = 1.f)
 		{
 			if (_centerX < 0 || _centerX >= m_iWidth || _centerY < 0 || _centerY >= m_iHeight) return;
-
-			std::cout << "Propagating value: " << m_Grid[_centerX][_centerY] << std::endl;
 
 			int startX = _centerX - _radius;
 			int startY = _centerY - _radius;
@@ -90,20 +86,16 @@ namespace GameIMap
 			int minY = max(0, startY);
 			int maxY = min(endY, m_iHeight);
 
-			cout << "---------------------------------------" << endl;
+//			cout << "---------------------------------------" << endl;
 			for (int y = minY; y < maxY; y++)
 			{
 				for (int x = minX; x < maxX; x++)
 				{
 					float distance = getNormalizedDistance(y, _centerY, x, _centerX, _radius);
-					cout << "x = " << x << ", y = " << y << ", ";
-					cout << "distance = " << distance << endl;
+//					cout << "x = " << x << ", y = " << y << ", ";
+//					cout << "distance = " << distance << endl;
 					m_Grid[x][y] += propValue(m_Grid[_centerX][_centerY], distance, _propType) * _magnitude;
 
-					if (m_Grid[_centerX][_centerY] == 8){
-					    std::cout << "Prop value: " << propValue(m_Grid[_centerX][_centerY], distance, _propType) * _magnitude << std::endl;
-					    std::cout << m_Grid[x][y] << std:: endl;
-					}
                     //Truncate final to (0, 10)
                     truncateInfluence(x, y);
 				}

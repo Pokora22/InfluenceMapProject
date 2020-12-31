@@ -5,7 +5,7 @@ Game::Game(bool debug) : m_window("Tiling", sf::Vector2u(1280, 800)), m_debug(de
 {
     //set up influencemap parameters
     m_player.setInfluence(10);
-    m_ePlayer.setInfluence(-2);
+    m_ePlayer.setInfluence(-10);
     
     
     //Influence Map related
@@ -63,7 +63,7 @@ void Game::Update(){
         
         if(oldPlayerPosition!=playerPosition){
 //            m_imap->clear();//everytime player moves to new tile, reset influencemap calculation
-            m_imap->addCellValue(playerPosition.x,playerPosition.y, m_player.getInfluence());
+            m_imap->setCellValue(playerPosition.x,playerPosition.y, m_player.getInfluence());
 
             //THIS DOESN'T DO ANYTHING !
 //            m_imap->propValue(0.1, GameIMap::PropCurve::Linear);
@@ -80,7 +80,7 @@ void Game::Update(){
         //if enemy position changes, update influence map
         if(old_E_PlayerPosition!=ePlayerPosition){
 //            m_imap->clear();//if not done here,
-            m_imap->addCellValue(ePlayerPosition.x,ePlayerPosition.y,m_ePlayer.getInfluence());
+            m_imap->setCellValue(ePlayerPosition.x,ePlayerPosition.y,m_ePlayer.getInfluence());
             //THIS DOESN'T DO ANYTHING !
 //            m_imap->propValue(0.1, GameIMap::PropCurve::Linear);
 //            std::cout << "Evil Player map changed to: " << m_imap->getCellValue(ePlayerPosition.x,ePlayerPosition.y) << std::endl;
@@ -155,11 +155,16 @@ void Game::Render(){
             location=m_map.GetActualTileLocation(j,i);
             float cellValue = m_imap->getCellValue(j, i);
 
-            color.r=m_imap->getCellValue(j, i)*255/10;
-            color.g=m_imap->getCellValue(j, i)*255/10;
-            color.b=m_imap->getCellValue(j, i)*255/10;
+            if(cellValue > 0){
+                color = sf::Color(cellValue/10*255, 0, 0);
+            }
+            else if(cellValue < 0){
+                color = sf::Color(0, 0, cellValue/-10*255);
+            }
+            else{
+                color = sf::Color(200, 200, 200);
+            }
             m_map.rectangeOnTile(sf::Vector2i(i,j),color );
-            // }
             sfTextArr.push_back(utilityFn(m_imap->getCellValue(j, i),sf::Vector2i(j,i)) );
         }
 
