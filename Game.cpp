@@ -1,6 +1,6 @@
 #include "Game.h"
 #include "game-imap/IMap.h"
-Game::Game() : m_window("Tiling", sf::Vector2u(1280, 800))
+Game::Game(bool debug) : m_window("Tiling", sf::Vector2u(1280, 800)), m_debug(debug)
 
 {
     //set up influencemap parameters
@@ -156,17 +156,16 @@ void Game::Render(){
         for (auto i =0; i< m_imap->m_iWidth;i++){
             location=m_map.GetActualTileLocation(j,i);
             
-            color.r=m_imap->getCellValue(j, i)*128/3+128;
-            color.g=m_imap->getCellValue(j, i)*128/3+128;
-            color.b=m_imap->getCellValue(j, i)*128/3+128;
+            color.r=m_imap->getCellValue(j, i)*150/3+100;
+            color.g=m_imap->getCellValue(j, i)*100;
+            color.b=m_imap->getCellValue(j, i)*200/3+125;
             m_map.rectangeOnTile(sf::Vector2i(i,j),color );
             // }
             sfTextArr.push_back(utilityFn(m_imap->getCellValue(j, i),sf::Vector2i(j,i)) );
         }
-    
-    
-    
-    m_map.printOnTileArr(sfTextArr);
+
+    if(m_debug)
+        m_map.printOnTileArr(sfTextArr);
     m_ePlayer.setEvilState();
     m_ePlayer.Draw(*m_window.GetRenderWindow(), m_player.m_timeDelta);
     m_window.EndDraw();

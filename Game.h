@@ -13,7 +13,7 @@ static float const MS_PER_STEP = 1.0f / FPS;        // Roughly (0.017) @ 60fps.
 
 class Game{
 public:
-    Game();
+    Game(bool debug);
     ~Game();
     
     void Update();
@@ -36,7 +36,8 @@ private:
     std::shared_ptr<GameIMap::InfluenceMap> m_imap;
     
     sf::Font m_font;
-    
+
+    const bool m_debug;
     
     /**
      * The main player object. Only one instance of this object should be created at any one time.

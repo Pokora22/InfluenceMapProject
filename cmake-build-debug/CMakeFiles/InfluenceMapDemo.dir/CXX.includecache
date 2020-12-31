@@ -8,12 +8,6 @@
 
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/Component.h
 
-G:/Dokumenty/WIT/C++/InfluenceMapDemo/Enemy.cpp
-Enemy.hpp
-G:/Dokumenty/WIT/C++/InfluenceMapDemo/Enemy.hpp
-math.h
--
-
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/Enemy.hpp
 Entity.h
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/Entity.h
@@ -25,6 +19,22 @@ utils.h
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/utils.h
 Object.h
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/Object.h
+
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Game.h
+Window.h
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Window.h
+ResourcePath.hpp
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/ResourcePath.hpp
+TileMap.hpp
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/TileMap.hpp
+Player.h
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Player.h
+evilPlayer.hpp
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/evilPlayer.hpp
+game-imap/IMap.h
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/game-imap/IMap.h
+
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Input.h
 
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/Level.hpp
 enums.h
@@ -45,6 +55,12 @@ iostream
 -
 utils.h
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/utils.h
+
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Player.h
+Entity.h
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Entity.h
+Input.h
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Input.h
 
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/ResourcePath.hpp
 string
@@ -85,6 +101,46 @@ ResourcePath.hpp
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/ResourcePath.hpp
 
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/enums.h
+
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/evilPlayer.hpp
+utils.h
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/utils.h
+Player.h
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Player.h
+Enemy.hpp
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Enemy.hpp
+
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/game-imap/IMap.h
+cstdlib
+-
+iostream
+-
+vector
+-
+algorithm
+-
+map
+-
+iomanip
+-
+../game-math/Vector2.h
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/game-math/Vector2.h
+
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/game-math/Vector2.h
+cmath
+-
+cfloat
+-
+cassert
+-
+string
+-
+sstream
+-
+
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/main.cpp
+Game.h
+G:/Dokumenty/WIT/C++/InfluenceMapDemo/Game.h
 
 G:/Dokumenty/WIT/C++/InfluenceMapDemo/utils.h
 SFML/Graphics.hpp
