@@ -11,18 +11,18 @@ m_statPoints(0)
 		className = "mage";
     m_speed = 200;
 	// Load textures.
-	m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_UP)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_walk_up.png");
-	m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_DOWN)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_walk_down.png");
-	m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_RIGHT)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_walk_right.png");
-	m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_LEFT)] = TextureManager::AddTexture("G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_walk_left.png");
-	m_textureIDs[static_cast<int>(ANIMATION_STATE::IDLE_UP)] = TextureManager::AddTexture("G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_idle_up.png");
-	m_textureIDs[static_cast<int>(ANIMATION_STATE::IDLE_DOWN)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_idle_down.png");
-	m_textureIDs[static_cast<int>(ANIMATION_STATE::IDLE_RIGHT)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_idle_right.png");
-	m_textureIDs[static_cast<int>(ANIMATION_STATE::IDLE_LEFT)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_idle_left.png");
+    m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_UP)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_walk_up.png");
+    m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_DOWN)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_walk_down.png");
+    m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_RIGHT)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_walk_right.png");
+    m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_LEFT)] = TextureManager::AddTexture("G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_walk_left.png");
+    m_textureIDs[static_cast<int>(ANIMATION_STATE::IDLE_UP)] = TextureManager::AddTexture("G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_idle_up.png");
+    m_textureIDs[static_cast<int>(ANIMATION_STATE::IDLE_DOWN)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_idle_down.png");
+    m_textureIDs[static_cast<int>(ANIMATION_STATE::IDLE_RIGHT)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_idle_right.png");
+    m_textureIDs[static_cast<int>(ANIMATION_STATE::IDLE_LEFT)] = TextureManager::AddTexture( "G:\\Dokumenty\\WIT\\C++\\InfluenceMapDemo\\spr_" + className + "_idle_left.png");
 
-	// Set initial sprite.
-	SetSprite(TextureManager::GetTexture(m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_UP)]), false, 8, 12);
-	m_currentTextureIndex = static_cast<int>(ANIMATION_STATE::WALK_UP);
+    // Set initial sprite.
+    SetSprite(TextureManager::GetTexture(m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_UP)]), false, 8, 12);
+    m_currentTextureIndex = static_cast<int>(ANIMATION_STATE::WALK_UP);
 
     std::shared_ptr<SpriteComponent> spriteCmpt = GetComponent<SpriteComponent>();
     spriteCmpt->setOrigin(sf::Vector2f(13.f, 18.f));

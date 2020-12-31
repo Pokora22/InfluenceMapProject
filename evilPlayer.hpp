@@ -36,7 +36,9 @@ public:
         // Set initial sprite.
         SetSprite(TextureManager::GetTexture(m_textureIDs[static_cast<int>(ANIMATION_STATE::WALK_UP)]), false, 8, 12);
         m_currentTextureIndex = static_cast<int>(ANIMATION_STATE::WALK_UP);
-        m_sprite.setOrigin(sf::Vector2f(13.f, 18.f));
+
+        std::shared_ptr<SpriteComponent> spriteCmpt = GetComponent<SpriteComponent>();
+        spriteCmpt->setOrigin(sf::Vector2f(13.f, 18.f));
         
     }
     
